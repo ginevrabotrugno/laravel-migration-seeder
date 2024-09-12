@@ -7,10 +7,23 @@ use App\Models\Train;
 
 class PageController extends Controller
 {
+    public function formatBoolean($value){
+
+        if ($value) {
+            return '<span style="color:green;">Sì</span>';
+        } else {
+            return '<span style="color:red;">No</span>';
+        }
+    }
+
     public function index() {
         $trains = Train::all();
 
-        return view('home', compact('trains'));
+        $formatBoolean = function($value) {
+            return $this->formatBoolean($value);
+        };
+
+        return view('home', compact('trains'))->with('formatBoolean', $formatBoolean);
     }
 
     public function about() {
@@ -20,5 +33,6 @@ class PageController extends Controller
     public function contacts() {
         return view('contacts');
     }
+
 
 }

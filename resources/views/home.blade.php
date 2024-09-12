@@ -29,11 +29,11 @@
                     <td>  {{ $train->company }} </td>
                     <td>  {{ $train->departure_time }} </td>
                     <td>  {{ $train->arrival_time }} </td>
-                    <td>  {{ $train->on_time }} </td>
+                    <td>  {!! $formatBoolean($train->on_time) !!} </td>
                     <td>  {{ $train->departure_station }} </td>
                     <td>  {{ $train->arrival_station }} </td>
                     <td>  {{ $train->carriage_number }} </td>
-                    <td>  {{ $train->cancelled }} </td>
+                    <td>  {!! $formatBoolean($train->cancelled) !!} </td>
                 </tr>
 
             @endforeach
