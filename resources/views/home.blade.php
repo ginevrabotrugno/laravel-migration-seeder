@@ -3,6 +3,8 @@
 
 @section('content')
 
+@dump($trains)
+
 @endsection
 
 
