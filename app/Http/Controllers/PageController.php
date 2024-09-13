@@ -9,9 +9,9 @@ class PageController extends Controller
 {
     public function index() {
 
-        $books = Package::all();
+        $packages = Package::all();
 
-        return view('home',  compact('books'));
+        return view('home',  compact('packages'));
     }
 
     public function about() {
