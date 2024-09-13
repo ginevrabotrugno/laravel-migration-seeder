@@ -28,7 +28,7 @@ class PackagesTableSeeder extends Seeder
             $new_package->return_date = $package['return_date'];
             $new_package->max_participants = $package['max_participants'];
 
-            dump($new_package);
+            $new_package->save();
 
         }
 
