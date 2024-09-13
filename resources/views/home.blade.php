@@ -24,11 +24,16 @@
         <tbody class="table-group-divider">
             @foreach ($trains as $train)
 
+                    @php
+                        $departure_date = date_create($train->departure_time);
+                        $arrival_date = date_create($train->arrival_time);
+                    @endphp
+
                 <tr>
                     <th>  {{ $train->train_code }} </th>
                     <td>  {{ $train->company }} </td>
-                    <td>  {{ $train->departure_time }} </td>
-                    <td>  {{ $train->arrival_time }} </td>
+                    <td>  {{ date_format($departure_date, "d/m/Y H:i") }} </td>
+                    <td>  {{ date_format($arrival_date, "d/m/Y H:i") }} </td>
                     <td>  {!! $formatBoolean($train->on_time) !!} </td>
                     <td>  {{ $train->departure_station }} </td>
                     <td>  {{ $train->arrival_station }} </td>
