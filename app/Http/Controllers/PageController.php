@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Package;
 
 class PageController extends Controller
 {
     public function index() {
-        return view('home');
+
+        $books = Package::all();
+
+        return view('home',  compact('books'));
     }
 
     public function about() {

@@ -3,6 +3,8 @@
 
 @section('content')
 
+@dd($books);
+
 <div class="container my-5">
 
     <h1>PACCHETTI DI VIAGGIO</h1>
