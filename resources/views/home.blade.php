@@ -26,18 +26,22 @@
         </thead>
         <tbody class="table-group-divider">
 
+            @foreach ($packages as $package)
+
             <tr>
-                <th>   </th>
-                <td>   </td>
-                <td>   </td>
-                <td>   </td>
-                <td>   </td>
-                <td>   </td>
-                <td>   </td>
-                <td>   </td>
-                <td>   </td>
+                <th> {{$package->destination}} </th>
+                <td> {{ $package->description }} </td>
+                <td> {{ $package->price }} € </td>
+                <td> {{ $package->days }} </td>
+                <td> {{ $package->accommodation }} </td>
+                <td> {{ $package->transport }} </td>
+                <td> {{ $package->departure_location }} </td>
+                <td> {{ $package->departure_date }} </td>
+                <td> {{ $package->return_date }} </td>
+                <td> {{ $package->max_participants }} </td>
             </tr>
 
+            @endforeach
         </tbody>
       </table>
 
